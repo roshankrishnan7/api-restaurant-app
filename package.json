@@ -1,0 +1,22 @@
+{
+  "name": "meal-o-server",
+  "version": "1.0.0",
+  "description": "Node backend server for Meal-O android app",
+  "main": "src/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshankrishnan7/restaurant-app-server.git"
+  },
+  "author": "roshankrishnan7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roshankrishnan7/restaurant-app-server/issues"
+  },
+  "homepage": "https://github.com/roshankrishnan7/restaurant-app-server#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
