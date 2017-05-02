@@ -1,4 +1,9 @@
 # Node
 node_modules/
+<<<<<<< HEAD
 npm-debug.log
 
+=======
+.grunt/
+npm-debug.log
+>>>>>>> 80adc49957d7caed9463dac35eac5f0a8b0188a6
