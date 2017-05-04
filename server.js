@@ -6,3 +6,5 @@ const port = process.env.PORT || 3000;
 app.listen(port);
 
 console.log(`Meal-O server API started on : ${port}`);
+
+var model = require('./api/models/meal-o-models');
