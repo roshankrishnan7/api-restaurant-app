@@ -7,4 +7,8 @@ app.listen(port);
 
 console.log(`Meal-O server API started on : ${port}`);
 
-var model = require('./api/models/meal-o-models');
+//var model = require('./api/models/meal-o-models');
+
+
+var routes = require('./api/routes/meal-o-routes');
+routes(app);

@@ -6,10 +6,12 @@ module.exports = function(app){
 app.route('/items')
    .get(mealO.list_all_items);
 
+/*
 app.route('/orders')
     .put(mealO.createOrder);
 
 app.route('/tasks/:itemId')
    .get(mealO.displayItem)
    .put(mealO.addItemToCart);
+   */
 };

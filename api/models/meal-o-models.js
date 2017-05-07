@@ -19,6 +19,8 @@ var allergent = ref.child('Allergent');
 var users = ref.child('User');
 var category = ref.child('Category');
 var orders = ref.child('Orders');
+var itemVal;
+
 
 allergent.on("child_added", function(snapshot) {
   console.log( snapshot.key);
@@ -33,10 +35,22 @@ orders.on("child_added", function(snapshot) {
 });
 
 
-item.orderByChild("price").on("child_added", function(snapshot) {
-  console.log(snapshot.key + " was " + snapshot.val().price + "$");
+item.on('value', function(snapshot){
+  //console.log(snapshot.val());
+ itemVal = snapshot.val();
+  //module.exports = itemVal;
 });
 
+exports.getItems = function() {
+  return itemVal;
+}
+
+/*
+item.orderByChild("price").on("child_added", function(snapshot) {
+  console.log(snapshot.key + " was " + snapshot.val().price + "$");
+  console.log(snapshot);
+});
+*/
 
 
 users.orderByChild("email").on("child_added", function(snapshot) {
