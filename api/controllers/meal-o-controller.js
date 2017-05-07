@@ -7,6 +7,6 @@ exports.list_all_items = function(req, res) {
   //  if (err)
     //  res.send(err);
     res.json(model.getItems());
-    console.log(model.getItems());
+    //console.log(model.getItems());
   //});
 };

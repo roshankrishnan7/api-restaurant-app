@@ -36,15 +36,33 @@ orders.on("child_added", function(snapshot) {
 
 
 item.on('value', function(snapshot){
-  //console.log(snapshot.val());
- itemVal = snapshot.val();
+  console.log(snapshot.key);
+  //console.log(snapshot.val().keys());
+  exports.getItems = function() {
+    var o = {};
+    var key = snapshot.key;
+    o[key] = [];
+    o[key].push(snapshot.val());
+
+//prints item names
+/*
+var o1 ={};
+for(var x in snapshot.val()){
+  console.log(x);
+}
+*/
+    return o;
+  }
+
   //module.exports = itemVal;
 });
-
+/*
 exports.getItems = function() {
+  var o = {};
+  var key = itemVal.
   return itemVal;
 }
-
+*/
 /*
 item.orderByChild("price").on("child_added", function(snapshot) {
   console.log(snapshot.key + " was " + snapshot.val().price + "$");
