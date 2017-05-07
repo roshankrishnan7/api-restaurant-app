@@ -1,6 +1,7 @@
 var express = require('express');
 
 var app = express();
+//set server to 80 in aws ec2 ubuntu
 const port = process.env.PORT || 3000;
 
 app.listen(port);
