@@ -1,4 +1,3 @@
-//var ref = db.ref("/public_resource");
 
 var admin = require('firebase-admin');
 
@@ -7,9 +6,7 @@ var serviceAccount = require('../../firebase/mealo-ce9b0-firebase-adminsdk-1080s
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://mealo-ce9b0.firebaseio.com/",
-  /*databaseAuthVariableOverride: null /*{
-    uid: "my-service-worker"
-  }*/
+
 });
 
 var db = admin.database();
@@ -37,51 +34,32 @@ orders.on("child_added", function(snapshot) {
 
 item.on('value', function(snapshot){
   console.log(snapshot.key);
-  //console.log(snapshot.val().keys());
+
   exports.getItems = function() {
     var o = {};
     var key = snapshot.key;
     o[key] = [];
     o[key].push(snapshot.val());
 
-//prints item names
-/*
-var o1 ={};
-for(var x in snapshot.val()){
-  console.log(x);
-}
-*/
-    return o;
+  return o;
   }
 
-  //module.exports = itemVal;
 });
-/*
-exports.getItems = function() {
-  var o = {};
-  var key = itemVal.
-  return itemVal;
-}
-*/
-/*
-item.orderByChild("price").on("child_added", function(snapshot) {
-  console.log(snapshot.key + " was " + snapshot.val().price + "$");
-  console.log(snapshot);
-});
-*/
 
+function getItem(key){
+//exports.getItem = function(var key) {
+console.log("getItem" + key);
+item.child(key)
+.once('value')
+.then(function(snapshot) {
+  //return(snapshot.key);
+  console.log("snapshot : "+snapshot.val().price);
+  return (snapshot.key);
+});
+
+}
+module.exports.getItem = getItem;
 
 users.orderByChild("email").on("child_added", function(snapshot) {
   console.log(snapshot.val().email);
 });
-
-
-/*
-//get value of child
-item.child('test')
-   .once('value')
-   .then(function(snapshot) {
-     console.log(snapshot.key);
-   });
-
-*/

@@ -2,16 +2,17 @@
 module.exports = function(app){
   var mealO = require('../controllers/meal-o-controller');
 
-//meal-o routes
+//retrice menu list
 app.route('/items')
    .get(mealO.list_all_items);
 
-/*
-app.route('/orders')
-    .put(mealO.createOrder);
+//process payment
+app.route('/stripe')
+   .post(mealO.process_payment);
 
-app.route('/tasks/:itemId')
-   .get(mealO.displayItem)
-   .put(mealO.addItemToCart);
-   */
+//retireve specific menu item
+app.route('/items/:itemId')
+    .get(mealO.displayItem);
+
+
 };

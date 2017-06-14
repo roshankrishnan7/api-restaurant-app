@@ -18,11 +18,10 @@
   },
   "homepage": "https://github.com/roshankrishnan7/restaurant-app-server#readme",
   "dependencies": {
-    "body-parser": "^1.17.1",
+    "body-parser": "^1.17.2",
     "express": "^4.15.2",
     "express-stormpath": "^3.2.0",
-    "firebase-admin": "^4.2.1",
-    
+    "firebase-admin": "^4.2.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
